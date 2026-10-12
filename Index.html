@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Ultimate Dhaba</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff8ed;
+  color: #302015;
+  line-height: 1.6;
+}
+
+header {
+  background: #2b170d;
+  color: white;
+  padding: 18px;
+  text-align: center;
+}
+
+header h1 {
+  color: #ff9f1c;
+}
+
+nav {
+  background: #e85d04;
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 380px;
+  padding: 90px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(#24170fcc, #24170fcc),
+    url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+}
+
+.hero h2 {
+  font-size: 42px;
+  color: #ffb15e;
+}
+
+.hero p {
+  margin: 15px auto;
+  max-width: 600px;
+}
+
+.btn {
+  display: inline-block;
+  background: #e85d04;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+section {
+  padding: 45px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.section-title h2 {
+  color: #c94c00;
+  font-size: 30px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.feature {
+  background: white;
+  padding: 22px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px #00000010;
+}
+
+#menu {
+  background: #ffedcf;
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.filters button {
+  padding: 9px 15px;
+  margin: 5px;
+  border: none;
+  background: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filters button:hover,
+.filters button.active {
+  background: #e85d04;
+  color: white;
+}
+
+.menu-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.food-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.food-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.food-info {
+  padding: 16px;
+}
+
+.food-info h3 {
+  font-size: 18px;
+}
+
+.price {
+  color: #28734a;
+  font-weight: bold;
+}
+
+.food-info p {
+  color: #66594e;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.food-info button {
+  width: 100%;
+}
+
+#order-message {
+  text-align: center;
+  margin-top: 20px;
+  color: #28734a;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.about {
+  max-width: 950px;
+  margin: auto;
+  text-align: center;
+}
+
+.about p {
+  margin: 12px 0;
+}
+
+#contact {
+  background: #2b170d;
+  color: white;
+  text-align: center;
+}
+
+#contact h2 {
+  color: #ffb15e;
+}
+
+.contact-box {
+  margin: 15px auto;
+  max-width: 550px;
+  padding: 20px;
+  border: 1px solid #806653;
+  border-radius: 10px;
+}
+
+footer {
+  background: #160d08;
+  color: white;
+  padding: 18px;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 750px) {
+  .features,
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h2 {
+    font-size: 34px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .features,
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 65px 15px;
+  }
+
+  .hero h2 {
+    font-size: 30px;
+  }
+
+  section {
+    padding: 35px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>India Ultimate Dhaba</h1>
+  <p>Desi Taste, Dil Se!</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#menu">Food Menu</a>
+  <a href="#about">About Us</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Welcome to Our Dhaba</h2>
+  <p>
+    Enjoy delicious Indian food, hot parathas, tasty curries
+    and refreshing drinks. Good food, great taste and friendly service!
+  </p>
+  <a href="#menu" class="btn">Explore Our Menu</a>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Why Choose Us?</h2>
+    <p>Fresh food and traditional Indian flavours.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h3>🍲 Fresh Food</h3>
+      <p>Delicious food prepared with care.</p>
+    </div>
+
+    <div class="feature">
+      <h3>🌶️ Desi Taste</h3>
+      <p>Enjoy popular Indian dishes and spices.</p>
+    </div>
+
+    <div class="feature">
+      <h3>👨‍👩‍👧 Family Friendly</h3>
+      <p>A comfortable place for everyone.</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="section-title">
+    <h2>Our Food Menu</h2>
+    <p>Choose your favourite dish.</p>
+  </div>
+
+  <div class="filters">
+    <button class="active" data-filter="all">All Items</button>
+    <button data-filter="starter">Starters</button>
+    <button data-filter="main">Main Course</button>
+    <button data-filter="bread">Breads</button>
+    <button data-filter="drink">Drinks</button>
+  </div>
+
+  <div class="menu-grid">
+
+    <div class="food-card" data-category="starter">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80" alt="Samosa">
+      <div class="food-info">
+        <h3>Punjabi Samosa</h3>
+        <p>Crispy samosas with spicy potato filling.</p>
+        <span class="price">₹60</span>
+        <button class="btn" data-item="Punjabi Samosa">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="starter">
+      <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=700&q=80" alt="Paneer tikka">
+      <div class="food-info">
+        <h3>Paneer Tikka</h3>
+        <p>Grilled paneer with Indian spices.</p>
+        <span class="price">₹220</span>
+        <button class="btn" data-item="Paneer Tikka">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="main">
+      <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=700&q=80" alt="Paneer curry">
+      <div class="food-info">
+        <h3>Paneer Butter Masala</h3>
+        <p>Paneer in creamy tomato gravy.</p>
+        <span class="price">₹260</span>
+        <button class="btn" data-item="Paneer Butter Masala">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="main">
+      <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80" alt="Dal makhani">
+      <div class="food-info">
+        <h3>Dal Makhani</h3>
+        <p>Traditional creamy black lentils.</p>
+        <span class="price">₹210</span>
+        <button class="btn" data-item="Dal Makhani">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="main">
+      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=700&q=80" alt="Chole bhature">
+      <div class="food-info">
+        <h3>Chole Bhature</h3>
+        <p>Spicy chickpeas with fluffy bhature.</p>
+        <span class="price">₹150</span>
+        <button class="btn" data-item="Chole Bhature">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="main">
+      <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=700&q=80" alt="Veg biryani">
+      <div class="food-info">
+        <h3>Veg Biryani</h3>
+        <p>Rice cooked with vegetables and spices.</p>
+        <span class="price">₹190</span>
+        <button class="btn" data-item="Veg Biryani">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="bread">
+      <img src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=700&q=80" alt="Butter naan">
+      <div class="food-info">
+        <h3>Butter Naan</h3>
+        <p>Soft naan with butter.</p>
+        <span class="price">₹45</span>
+        <button class="btn" data-item="Butter Naan">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="bread">
+      <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=700&q=80" alt="Tandoori roti">
+      <div class="food-info">
+        <h3>Tandoori Roti</h3>
+        <p>Traditional whole wheat bread.</p>
+        <span class="price">₹20</span>
+        <button class="btn" data-item="Tandoori Roti">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="drink">
+      <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80" alt="Masala chai">
+      <div class="food-info">
+        <h3>Masala Chai</h3>
+        <p>Hot tea with milk and Indian spices.</p>
+        <span class="price">₹30</span>
+        <button class="btn" data-item="Masala Chai">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="drink">
+      <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=700&q=80" alt="Mango lassi">
+      <div class="food-info">
+        <h3>Mango Lassi</h3>
+        <p>Refreshing mango yoghurt drink.</p>
+        <span class="price">₹90</span>
+        <button class="btn" data-item="Mango Lassi">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="starter">
+      <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=700&q=80" alt="Vegetable kebab">
+      <div class="food-info">
+        <h3>Hara Bhara Kebab</h3>
+        <p>Green vegetable patties with spices.</p>
+        <span class="price">₹180</span>
+        <button class="btn" data-item="Hara Bhara Kebab">Add to Order</button>
+      </div>
+    </div>
+
+    <div class="food-card" data-category="main">
+      <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=700&q=80" alt="Kadai paneer">
+      <div class="food-info">
+        <h3>Kadai Paneer</h3>
+        <p>Paneer and capsicum in spicy gravy.</p>
+        <span class="price">₹250</span>
+        <button class="btn" data-item="Kadai Paneer">Add to Order</button>
+      </div>
+    </div>
+
+  </div>
+
+  <p id="order-message">Your selected food items will appear here.</p>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div class="section-title">
+      <h2>About Our Dhaba</h2>
+    </div>
+    <p>
+      India Ultimate Dhaba is a student website project.
+      Our idea is to present popular Indian food in a simple
+      and attractive way.
+    </p>
+    <p>
+      Visitors can explore the food menu, check sample prices,
+      filter food categories and view our contact information.
+    </p>
+    <p>Our goal is simple: Good Food, Great Taste!</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <div class="contact-box">
+    <h3>📍 Our Address</h3>
+    <p>Shop No. 24, Ajmal Khan Road</p>
+    <p>Karol Bagh, New Delhi - 110005</p>
+  </div>
+
+  <div class="contact-box">
+    <h3>📞 Phone Number</h3>
+    <p>+91 98765 43210</p>
+  </div>
+
+  <div class="contact-box">
+    <h3>👨‍🍳 Owner</h3>
+    <p>Mr. Rajesh Kumar</p>
+  </div>
+
+  <p>Note: Contact details are fictional examples for a student project.</p>
+</section>
+
+<footer>
+  <p>© 2026 India Ultimate Dhaba</p>
+  <p>Student Website Project | Made with HTML, CSS and JavaScript</p>
+</footer>
+
+<script>
+// Filter food items by category
+const filterButtons = document.querySelectorAll(".filters button");
+const foodCards = document.querySelectorAll(".food-card");
+
+filterButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    filterButtons.forEach(function(item) {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    const category = button.dataset.filter;
+
+    foodCards.forEach(function(card) {
+      if (category === "all" ||
+          card.dataset.category === category) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+
+// Show selected food items
+const selectedItems = [];
+
+document.querySelectorAll("[data-item]").forEach(function(button) {
+  button.addEventListener("click", function() {
+    selectedItems.push(button.dataset.item);
+
+    document.getElementById("order-message").textContent =
+      "Selected items: " + selectedItems.join(", ");
+  });
+});
+</script>
+
+</body>
+</html>
